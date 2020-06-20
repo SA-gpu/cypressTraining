@@ -1,28 +1,32 @@
 /// <reference types="cypress" />
+import Login  from "../pageObjects/login"
+import Home  from "../pageObjects/home"
 const url = Cypress.env('URL')
 
 describe('Login Functionality', () => {
-   
+   let login = new Login()
+   let home = new Home()
+
    beforeEach(()=> {
       cy.visit(url)
-      cy.get('#logInPanelHeading').should('have.text','LOGIN Panel')
+      login.loginPageAssertion()
     })
 
    it('Successfull Login Case', () => { 
-      cy.get('#divUsername').type('admin')
-      cy.get('#txtPassword').type('admin123')
-      cy.get('#btnLogin').click()
-      cy.get('#menu_dashboard_index').should('be.visible')
+      login.enterUserName('admin')
+      login.enterPassword('admin123')
+      login.clickOnLoginBtn()
+      login.loginAssertion()
    })
 
-   it('Successfull logout Case', () => { 
-      cy.get('#divUsername').type('admin')
-      cy.get('#txtPassword').type('admin123')
-      cy.get('#btnLogin').click()
-      cy.get('#menu_dashboard_index').should('be.visible').wait(2000)
-      cy.get('#welcome').click()
-      cy.get('#welcome-menu').should('be.visible')
-      cy.get('#welcome-menu > ul > li:nth-child(2) > a').click()
-      cy.get('#logInPanelHeading').should('have.text','LOGIN Panel')
+   it('Successfull Logout Case', () => { 
+      login.enterUserName('admin')
+      login.enterPassword('admin123')
+      login.clickOnLoginBtn()
+      login.loginAssertion()
+      home.clickOnWelcomeDropDown()
+      home.menuVisibleAssertion()
+      home.clickOnDropDownItem('Logout')  
+      login.loginPageAssertion()
    })
 })

@@ -3,6 +3,7 @@
    "viewportWidth": 1080,
    "viewportHeight": 660,
    "chromeWebSecurity": false,
+   "port": 50621,
    "env": {
      "URL": "https://opensource-demo.orangehrmlive.com"
    }

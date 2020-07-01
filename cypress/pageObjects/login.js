@@ -12,11 +12,15 @@ class login{
    }
 
    clickOnLoginBtn(){
+      cy.server()
+         .route('GET','**/dashboard/**').as('getDashboard')
       CommonFunc.clickOnElement('#btnLogin')
+      cy.wait('@getDashboard')
+         .should('have.property','status', 200)
    }
 
    loginAssertion(){
-      CommonFunc.elementShould('#menu_dashboard_index','be.visible')
+      CommonFunc.elementShould('#menu_dashboard_index','be.visible')     
    }
 
    loginPageAssertion(){

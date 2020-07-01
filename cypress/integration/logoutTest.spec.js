@@ -12,8 +12,12 @@ describe('Login Functionality', () => {
       login.loginPageAssertion()
     })
 
-   it('Successfull Login Case', () => { 
+    it('Successfull Logout Case', () => { 
       cy.login({email:'admin',password:'admin123'})
+      home.clickOnWelcomeDropDown()
+      home.menuVisibleAssertion()
+      home.clickOnDropDownItem('Logout')  
+      login.loginPageAssertion()
    })
 
 })

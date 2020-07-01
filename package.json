@@ -1,15 +1,25 @@
 {
   "name": "test-project",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "cypress automation structure",
   "main": "index.js",
   "scripts": {
     "cypress": "cypress open",
-    "test": "cypress run"
+    "test": "cypress run",
+    "run_test_with_report": "cypress run --spec cypress/integration/**.spec.js --browser electron --headed",
+    "clean_reports": "rimraf cypress/reports/*",
+    "merge_report": "mochawesome-merge cypress/reports/*.json -o cypress/reports/Test-Report.json",
+    "generate_report": "marge cypress/reports/Test-Report.json --reportDir ./ --inline --charts --showSkipped --ts",
+    "final_report": "npm run merge_report && npm run generate_report",
+    "TestRunnerReport": "npm run clean_reports && npm run run_test_with_report && npm run final_report"
   },
   "author": "Saqib Ahmed",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.8.0"
+    "cypress": "^4.9.0",
+    "mochawesome": "^6.1.1",
+    "mochawesome-merge": "^4.1.0",
+    "mochawesome-report-generator": "^5.1.0",
+    "rimraf": "^3.0.2"
   }
 }

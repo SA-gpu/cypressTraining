@@ -21,26 +21,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-
+        
       # because of "record" and "parallel" parameters
       # these containers will load balance all found tests among themselves
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-        #  record: true
+          browser: chrome
+          headless: true
+          record: true
           parallel: true
           
     #  - name: Install cypress and verify
     #   run: |
     #    npm ci
     #   $(npm bin)/cypress verify
-          
-      - name: Remove test reports
-        run: npm run clean_reports
-        
-      - name: Run Cypress tests
-        run: npm run test-parallel
-        continue-on-error: true
+
+     # - name: Remove test reports
+     #   run: npm run clean_reports
+    #  - name: Run Cypress tests
+    #    run: npm run test-parallel
+    #   continue-on-error: true
         
       - name: Copy test execution videos and screenshots
         run: |
@@ -59,3 +60,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+
+      env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # Recommended: pass the GitHub token lets this action correctly
+          # determine the unique run id necessary to re-run the checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

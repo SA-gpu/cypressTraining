@@ -21,10 +21,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-
-          
-      - name: Remove test reports
-        run: npm run clean_reports
         
       # because of "record" and "parallel" parameters
       # these containers will load balance all found tests among themselves
@@ -41,7 +37,8 @@ jobs:
     #    npm ci
     #   $(npm bin)/cypress verify
 
-        
+     # - name: Remove test reports
+     #   run: npm run clean_reports
     #  - name: Run Cypress tests
     #    run: npm run test-parallel
     #   continue-on-error: true

@@ -4,7 +4,8 @@
   "viewportHeight": 800,
   "chromeWebSecurity": false,
   "env": {
-    "URL": "https://opensource-demo.orangehrmlive.com"
+    "URL": "https://opensource-demo.orangehrmlive.com",
+    "CYPRESS_RECORD_KEY":"e4c4f7a2-15cb-4802-95d7-b2004ffbb946"
   },
   "firefoxGcInterval": {
     "runMode": null,

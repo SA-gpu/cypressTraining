@@ -44,3 +44,23 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+
+      - name: Send email
+        uses: dawidd6/action-send-mail@v2.2.0
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions job result
+          # Literal body:
+          body: Build job of ${{github.repository}} completed successfully!
+          # Read file contents as body:
+          body: file://README.md
+          to: saahmed@nisum.com
+          from: Saqib Ahmed # <user@example.com>
+          # Optional content type (defaults to text/plain):
+          content_type: text/html
+          # Optional attachments:
+          attachments: https://saqibahmed440.github.io/cypressTraining/Test-Report.html
+

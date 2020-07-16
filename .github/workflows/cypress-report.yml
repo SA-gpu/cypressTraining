@@ -23,7 +23,6 @@ jobs:
         containers: [1, 2]
     steps:
       - uses: actions/checkout@v2
-      - uses: cypress-io/github-action@v2
         with:
           browser: chrome
           headless: true

@@ -56,7 +56,7 @@ jobs:
           # Literal body:
           body: Build job of ${{github.repository}} completed successfully!
           # Read file contents as body:
-           file://README.md
+          #body: file://README.md
           to: saahmed@nisum.com
           from: Saqib Ahmed # <user@example.com>
           # Optional content type (defaults to text/plain):

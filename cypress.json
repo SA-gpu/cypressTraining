@@ -19,5 +19,5 @@
     "json": true,
     "charts": true
   },
-  "video": false
+  "video": true
 }

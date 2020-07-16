@@ -60,6 +60,8 @@ typings/
 # next.js build output
 .next
 
-#cypress/videos/*
-#cypress/screenshots/*
-#cypress/reports/*
+.html
+.png
+.mp4
+.json
+assets/

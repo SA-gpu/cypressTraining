@@ -2,7 +2,7 @@ name: Parallel Test Execution Cypress Report
 on:
   push:
     branches: 
-    - 'develop'
+    - 'local'
 
 jobs:
   cypress-test:

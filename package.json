@@ -16,7 +16,7 @@
   "author": "Saqib Ahmed",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.9.0",
+    "cypress": "^4.10.0",
     "mochawesome": "^6.1.1",
     "mochawesome-merge": "^4.1.0",
     "mochawesome-report-generator": "^5.1.0",

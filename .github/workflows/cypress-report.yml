@@ -2,7 +2,7 @@ name: Execute Cypress Test
 on:
   push:
     branches: 
-    - 'local'
+    - 'develop'
 
 jobs:
   cypress-test:
@@ -21,7 +21,11 @@ jobs:
         run: npm run clean_reports
         
       - name: Run Cypress tests
-        run: npm run test
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          headless: true
+        #run: npm run test
         continue-on-error: true
         
       - name: Copy test execution videos and screenshots

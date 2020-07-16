@@ -25,7 +25,7 @@ jobs:
       # because of "record" and "parallel" parameters
       # these containers will load balance all found tests among themselves
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v1
         with:
         #  record: true
           parallel: true
@@ -38,9 +38,9 @@ jobs:
       - name: Remove test reports
         run: npm run clean_reports
         
-      - name: Run Cypress tests
-        run: npm run test-parallel
-        continue-on-error: true
+    #  - name: Run Cypress tests
+    #    run: npm run test-parallel
+    #   continue-on-error: true
         
       - name: Copy test execution videos and screenshots
         run: |

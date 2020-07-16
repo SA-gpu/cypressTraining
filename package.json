@@ -10,7 +10,7 @@
     "clean_reports": "rimraf cypress/reports/*",
     "merge_report": "mochawesome-merge cypress/reports/*.json -o cypress/reports/Test-Report.json",
     "generate_report": "marge cypress/reports/Test-Report.json --reportDir ./ --inline --charts --showSkipped --ts",
-    "generate_report_onPublic": "marge cypress/reports/Test-Report.json --reportDir public --assetsDir public/assets --reportPageTitle index.html",
+    "generate_report_onPublic": "marge cypress/reports/Test-Report.json --reportDir ./ --inline --charts public --assetsDir public/assets",
     "final_report": "npm run merge_report && npm run generate_report",
     "TestRunnerReport": "npm run clean_reports && npm run run_test_with_report && npm run final_report"
   },

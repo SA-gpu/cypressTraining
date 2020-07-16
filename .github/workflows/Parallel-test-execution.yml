@@ -25,11 +25,11 @@ jobs:
       # because of "record" and "parallel" parameters
       # these containers will load balance all found tests among themselves
       - name: Cypress run
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           browser: chrome
           headless: true
-          record: false
+          record: true
           parallel: true
           
     #  - name: Install cypress and verify

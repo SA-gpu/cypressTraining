@@ -15,13 +15,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Remove test reports
-        run: npm run clean_reports
-
       - name: Install cypress and verify
         run: |
           npm ci
           $(npm bin)/cypress verify
+          
+      - name: Remove test reports
+        run: npm run clean_reports
+        
       - name: Run Cypress tests
         run: npm run test
         continue-on-error: true

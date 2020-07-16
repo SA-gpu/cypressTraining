@@ -37,7 +37,7 @@ jobs:
         run: npm run merge_report
 
       - name: Generate HTML report
-        run: npm run generate_report
+        run: npm run generate_report_onPublic
       
       - name: Deploy report page to GitHub Page
         uses: peaceiris/actions-gh-pages@v3

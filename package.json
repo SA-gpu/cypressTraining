@@ -6,6 +6,7 @@
   "scripts": {
     "cypress": "cypress open",
     "test": "cypress run",
+    "test-parallel": "cypress run --parallel",
     "run_test_with_report": "cypress run --spec cypress/integration/**.spec.js --browser electron --headed",
     "clean_reports": "rimraf cypress/reports/*",
     "merge_report": "mochawesome-merge cypress/reports/*.json -o cypress/reports/Test-Report.json",

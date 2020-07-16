@@ -29,7 +29,7 @@ jobs:
         with:
           browser: chrome
           headless: true
-        #  record: true
+          record: false
           parallel: true
           
     #  - name: Install cypress and verify

@@ -60,5 +60,5 @@ typings/
 # next.js build output
 .next
 
-cypress/videos
-cypress/screenshots
+#cypress/videos
+#cypress/screenshots

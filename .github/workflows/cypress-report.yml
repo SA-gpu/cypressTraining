@@ -15,8 +15,9 @@ jobs:
 
       - name: Install cypress and verify
         run: |
-          npm ci
-          $(npm bin)/cypress verify
+          npm run start:ci:windows
+      #npm ci
+      #$(npm bin)/cypress verify
           
       - name: Remove test reports
         run: npm run clean_reports

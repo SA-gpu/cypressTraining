@@ -7,17 +7,15 @@ on:
 jobs:
   cypress-test:
     name: Run on Chrome 83
-    runs-on: windows-latest
-    #ubuntu-18.04
-    #container: cypress/browsers:node12.18.0-chrome83-ff77
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.0-chrome83-ff77
     steps:
       - uses: actions/checkout@v2
 
       - name: Install cypress and verify
         run: |
-          npm run start:ci:windows
-      #npm ci
-      #$(npm bin)/cypress verify
+            npm ci
+            $(npm bin)/cypress verify
           
       - name: Remove test reports
         run: npm run clean_reports

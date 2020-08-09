@@ -10,10 +10,14 @@ describe('Login Functionality', () => {
    beforeEach(()=> {
       cy.visit(url)
       login.loginPageAssertion()
-    })
+   })
 
    it('Successfull Login Case', () => { 
       cy.login({email:'admin',password:'admin123'})
+   })
+
+   it('Retries Login Case on Fail', () => { 
+      cy.login({email:'admin',password:'admin23'})
    })
 
 })

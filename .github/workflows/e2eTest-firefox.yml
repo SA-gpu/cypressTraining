@@ -1,34 +1,33 @@
-name: Execute Cypress Test
+name: E2E Test Run (Firefox)
 on:
   push:
     branches: 
-    - 'develop'
+    - 'master'
 
 jobs:
   cypress-test:
-    name: Run on Chrome 83
+    name: Run e2e Test Firefox
     runs-on: ubuntu-latest
-    container: cypress/browsers:node12.18.0-chrome83-ff77
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install cypress and verify
-        run: |
-            npm ci
-            $(npm bin)/cypress verify
+      - name: Install dependencies cypress
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
           
       - name: Remove test reports
         run: npm run clean_reports
-        
+
       - name: Run Cypress tests
         uses: cypress-io/github-action@v2
         with:
-          browser: chrome
-          headless: true
+          install: false
+          browser: firefox
+          headless: false
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
-        #run: npm run test
-        continue-on-error: true
-        
+        continue-on-error: true          
+
       - name: Copy test execution videos and screenshots
         run: |
           mkdir public

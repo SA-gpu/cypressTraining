@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-07-16T07:57:22.119Z",
+    "end": "2020-07-16T07:57:35.367Z",
+    "duration": 13248,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "627dcb16-6514-4228-95b5-7e5dfab1754b",
+      "title": "",
+      "fullFile": "cypress\\integration\\logoutTest.spec.js",
+      "file": "cypress\\integration\\logoutTest.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "da3e311e-28d8-4fd5-a375-0e318ae659eb",
+          "title": "Login Functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Successfull Logout Case",
+              "fullTitle": "Login Functionality Successfull Logout Case",
+              "timedOut": null,
+              "duration": 9563,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.login({\n  email: 'admin',\n  password: 'admin123'\n});\nhome.clickOnWelcomeDropDown();\nhome.menuVisibleAssertion();\nhome.clickOnDropDownItem('Logout');\nlogin.loginPageAssertion();",
+              "err": {},
+              "uuid": "a1b257f9-0dfc-4d1e-9146-0e389539d145",
+              "parentUUID": "da3e311e-28d8-4fd5-a375-0e318ae659eb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a1b257f9-0dfc-4d1e-9146-0e389539d145"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9563,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.1.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFileName": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

@@ -1,9 +1,26 @@
 {
-   "watchForFileChanges": false,
-   "viewportWidth": 1080,
-   "viewportHeight": 660,
-   "chromeWebSecurity": false,
-   "env": {
-     "URL": "https://opensource-demo.orangehrmlive.com"
-   }
+  "watchForFileChanges": false,
+  "viewportWidth": 1280,
+  "viewportHeight": 800,
+  "chromeWebSecurity": false,
+  "env": {
+    "RETRIES": 3,
+    "URL": "https://opensource-demo.orangehrmlive.com",
+    "CYPRESS_RECORD_KEY":"e4c4f7a2-15cb-4802-95d7-b2004ffbb946"
+  },
+  "firefoxGcInterval": {
+    "runMode": null,
+    "openMode": null
+  },
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/reports",
+    "reportFileName": "report",
+    "overwrite": false,
+    "html": true,
+    "json": true,
+    "charts": true
+  },
+  "video": true,
+  "projectId": "bzve1f"
 }

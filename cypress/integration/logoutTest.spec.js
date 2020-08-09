@@ -10,13 +10,20 @@ describe('Login Functionality', () => {
    beforeEach(()=> {
       cy.visit(url)
       login.loginPageAssertion()
-    })
+   })
 
-    it('Successfull Logout Case', () => { 
+   it('Successfull Logout Case', () => { 
       cy.login({email:'admin',password:'admin123'})
       home.clickOnWelcomeDropDown()
       home.menuVisibleAssertion()
       home.clickOnDropDownItem('Logout')  
+      login.loginPageAssertion()
+   })
+
+   it('Retries Logout Case on Fail', () => { 
+      cy.login({email:'admin',password:'admin123'})
+      home.clickOnWelcomeDropDown()
+      home.menuVisibleAssertion()  
       login.loginPageAssertion()
    })
 

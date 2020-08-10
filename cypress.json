@@ -17,7 +17,7 @@
     "reportDir": "cypress/reports",
     "reportFileName": "report",
     "overwrite": false,
-    "html": true,
+    "html": false,
     "json": true,
     "charts": true
   },

@@ -3,7 +3,7 @@ import Login  from "../pageObjects/login"
 import Home  from "../pageObjects/home"
 const url = Cypress.env('URL')
 
-describe('Login Functionality', () => {
+describe('Logout Functionality', () => {
    let login = new Login()
    let home = new Home()
 
